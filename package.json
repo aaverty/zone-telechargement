@@ -1,0 +1,26 @@
+{
+  "name": "zone-telechargement",
+  "version": "1.0.0",
+  "description": "ZoneTelechargement node dirty Api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JimmyLaurent/zone-telechargement.git"
+  },
+  "keywords": [
+    "zone",
+    "telechargement",
+    "zonetelechargement",
+    "scraper"
+  ],
+  "author": "Jimmy Laurent",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "request-x-ray": "^0.1.4",
+    "x-ray": "^2.3.2"
+  }
+}
