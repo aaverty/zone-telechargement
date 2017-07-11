@@ -59,7 +59,7 @@ module.exports = class ZoneTelechargement {
             .limit(pageLimit));
     };
 
-    static getDetail(url) {
+    static getDetails(url) {
         return Promise.fromCallback(x(url, 'body', {
             links: ['b > a:contains(Télécharger)@href'],
             detail: '.corps > center > center@html'

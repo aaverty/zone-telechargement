@@ -1,7 +1,7 @@
 {
   "name": "zone-telechargement",
   "version": "1.0.0",
-  "description": "ZoneTelechargement node dirty Api",
+  "description": "ZoneTelechargement node dirty api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
