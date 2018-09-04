@@ -60,13 +60,24 @@ module.exports = class ZoneTelechargement {
     };
 
     static getDetails(url) {
-        return Promise.fromCallback(x(url, 'body', {
-            links: ['b > a:contains(Télécharger)@href'],
-            detail: '.corps > center > center@html'
-        }))
-            .then(r => {
-                r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
-                return r;
-            });
+        if (url.indexOf('telecharger-series') > -1) {
+			return Promise.fromCallback(x(url, 'body', {
+				links: ['b > a:contains(Episode)@href'],
+				detail: '.corps > center > center@html'
+			}))
+			.then(r => {
+				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
+				return r;
+			});
+		} else {
+			return Promise.fromCallback(x(url, 'body', {
+				links: ['b > a:contains(Télécharger)@href'],
+				detail: '.corps > center > center@html'
+			}))
+			.then(r => {
+				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
+				return r;
+			});
+		}
     };
 }
