@@ -63,7 +63,8 @@ module.exports = class ZoneTelechargement {
         if (url.indexOf('telecharger-series') > -1) {
 			return Promise.fromCallback(x(url, 'body', {
 				links: ['b > a:contains(Episode)@href'],
-				detail: '.corps > center@html'
+				detail: '.corps > center@html',
+				duration: '.corps > center > (strong > u:contains(Durée)::after)@html'
 			}))
 			.then(r => {
 				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
@@ -72,7 +73,8 @@ module.exports = class ZoneTelechargement {
 		} else {
 			return Promise.fromCallback(x(url, 'body', {
 				links: ['b > a:contains(Télécharger)@href'],
-				detail: '.corps > center@html'
+				detail: '.corps > center@html',
+				duration: '.corps > center > (strong > u:contains(Durée)::after)@html'
 			}))
 			.then(r => {
 				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
