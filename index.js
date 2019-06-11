@@ -49,12 +49,12 @@ module.exports = class ZoneTelechargement {
 	       '&note=0&art=0&AiffchageMode=0&inputTirePar=0&cstart=0' 
 
         return Promise.fromCallback(x(url, '.cover_global', [{
-            title: '.cover_infos_title > a@text | trim',
-            link: '.cover_infos_title > a@href | trim',
+            title: '.cover_infos_global > .cover_infos_title > a@text | trim',
+            link: '.cover_infos_global > .cover_infos_title > a@href | trim',
             quality: '.detail_release span@text | trim',
-            lang: '.detail_release span:nth-child(2)@text | trim',
-            genre: '.cover_infos_genre@text | trim',
-            year: '.cover_infos_release_date@text | trim',
+//             lang: '.detail_release span:nth-child(2)@text | trim',
+//             genre: '.cover_infos_genre@text | trim',
+//             year: '.cover_infos_release_date@text | trim',
             imageUrl: '.mainimg@src | trim'
         }])
             .paginate('.navigation > a:contains(Suivant)@href')
