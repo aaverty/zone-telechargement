@@ -67,7 +67,8 @@ module.exports = class ZoneTelechargement {
 				links: ['b > a:contains(Episode)@href']
 			}))
 			.then(r => {
-				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
+				console.log(r)
+// 				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
 				return r;
 			});
 		} else {
@@ -75,7 +76,8 @@ module.exports = class ZoneTelechargement {
 				links: ['b > a:contains(Télécharger)@href']
 			}))
 			.then(r => {
-				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
+				console.log(r)
+// 				r.links = r.links.map(l => decryptDlProtecteUrl(l.replace('\r', '')));
 				return r;
 			});
 		}
