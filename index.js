@@ -1,5 +1,5 @@
 const Xray = require('x-ray');
-const makeDriver = require('request-x-ray');
+const phantom = require('x-ray-phantom');
 const Promise = require('bluebird');
 
 var x = Xray({
@@ -8,7 +8,7 @@ var x = Xray({
             return typeof value === 'string' ? value.trim() : value
         }
     }
-});
+}).driver(phantom());
 
 decryptDlProtecteUrl = (url) => {
     let words = [['https://www.dl-protecte.com/', ''],
