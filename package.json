@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "request-x-ray": "^0.1.4",
+    "x-ray-phantom": "^1.0.1",
     "x-ray": "^2.3.2"
   }
 }
