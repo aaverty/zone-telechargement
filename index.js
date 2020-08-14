@@ -45,7 +45,7 @@ module.exports = class ZoneTelechargement {
 //         let url = 'https://wwwwv.annuaire-telechargement.com//index.php?' +
 //             'do=search&subaction=search&search_start=1&full_search=1&result_from=1&story=' + query +
 //             '&all_word_seach=1&titleonly=3&searchuser=&replyless=0&replylimit=0&searchdate=0&beforeafter=after&sortby=date&resorder=desc&showposts=0&catlist%5B%5D=0';
-	   let url = 'https://annuaire-telechargement.com/engine/ajax/controller.php?mod=filter&catid=0&q=' + query + 
+	   let url = 'https://zt-za.com/engine/ajax/controller.php?mod=filter&catid=0&q=' + query + 
 	       '&note=0&art=0&AiffchageMode=0&inputTirePar=0&cstart=0' 
 
         return Promise.fromCallback(x(url, '.cover_global', [{
